@@ -37,4 +37,14 @@ public class ConverterTest {
         IpPort result = converter.convert(source);
         assertThat(result).isEqualTo(new IpPort("127.0.0.1", 8080));
     }
+    @Test
+    void hashCodeTest(){
+        IpPort ipPort = new IpPort("127.0.0.1", 8080);
+        IpPort ipPort2 = new IpPort("127.0.0.1", 8080);
+        int ip1 = ipPort.hashCode();
+        int ip2 = ipPort2.hashCode();
+
+        System.out.println(ipPort.equals(ipPort2));
+
+    }
 }
